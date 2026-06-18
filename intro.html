@@ -7,8 +7,8 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 html,body{width:100%;height:100%;background:#050505;overflow:hidden;font-family:'Space Grotesk',sans-serif;}
-#intro{position:fixed;inset:0;z-index:9999;background:#050505;display:flex;align-items:center;justify-content:center;}
-#c{display:block;width:100%;height:100%;}
+#intro{position:fixed;inset:0;z-index:9999;background:#050505;}
+#c{display:block;width:100%;height:100%;position:absolute;inset:0;}
 
 /* Skip button */
 #skip{position:fixed;bottom:32px;right:32px;z-index:10000;background:transparent;border:1px solid rgba(255,255,255,0.15);
@@ -70,7 +70,7 @@ if (isMobile) {
   document.getElementById('intro').style.transition = 'opacity 0.8s';
   setTimeout(() => {
     document.getElementById('intro').style.opacity = '0';
-    setTimeout(() => { window.location.href = 'index.html'; }, 800);
+    setTimeout(() => { window.location.href = 'index.html?skip=1'; }, 800);
   }, 1200);
 }
 
@@ -377,7 +377,7 @@ function morphToNavbar() {
 
 function launchSite() {
   // Flag is already set by index.html before redirect — safe to go back
-  window.location.href = 'index.html';
+  window.location.href = 'index.html?skip=1';
 }
 
 /* ─── ANIMATE ─── */
@@ -430,7 +430,7 @@ runTimeline();
 
 /* ─── SKIP ─── */
 function skipIntro() {
-  window.location.href = 'index.html';
+  window.location.href = 'index.html?skip=1';
 }
 </script>
 </body>
