@@ -23,7 +23,7 @@
   <meta name="twitter:description" content="Stories that captivate. Content that converts." />
 
   <!-- Favicon — logo PNG as icon -->
-  <link rel="icon" type="image/png" href="rianic-logo.svg" />
+  <link rel="icon" type="image/svg+xml" href="rianic-logo.svg" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -58,11 +58,11 @@
 
 <body class="bg-rblack text-rwhite font-body overflow-x-hidden">
 
-  <!-- Intro gate: redirect to intro.html on first visit -->
+  <!-- Intro gate: show intro once per session, skip on return -->
   <script>
     (function(){
-      if (!sessionStorage.getItem("rianic_intro_seen")) {
-        sessionStorage.setItem("rianic_intro_seen","1");
+      if (!sessionStorage.getItem("rianic_intro_done")) {
+        sessionStorage.setItem("rianic_intro_done", "1");
         window.location.replace("intro.html");
       }
     })();

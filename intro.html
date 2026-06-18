@@ -47,7 +47,7 @@ letter-spacing:0.65em;color:#8A8A8A;margin-top:4px;}
 <button id="sound-btn" onclick="toggleSound()">♪ Sound</button>
 
 <div id="morph-logo">
-  <img src="assets/images/rianic-logo.png" alt="RIANIC Productions"/>
+  <img src="rianic-logo.svg" alt="RIANIC Productions"/>
   <div id="morph-wordmark">
     <div class="name">RIANIC</div>
     <div class="sub">PRODUCTIONS</div>
@@ -70,7 +70,7 @@ if (isMobile) {
   document.getElementById('intro').style.transition = 'opacity 0.8s';
   setTimeout(() => {
     document.getElementById('intro').style.opacity = '0';
-    setTimeout(() => { launchSite(); }, 800);
+    setTimeout(() => { window.location.href = 'index.html'; }, 800);
   }, 1200);
 }
 
@@ -376,7 +376,7 @@ function morphToNavbar() {
 }
 
 function launchSite() {
-  // Redirect to the actual homepage
+  // Flag is already set by index.html before redirect — safe to go back
   window.location.href = 'index.html';
 }
 
@@ -430,9 +430,6 @@ runTimeline();
 
 /* ─── SKIP ─── */
 function skipIntro() {
-  launchSite();
-}
-function launchSite() {
   window.location.href = 'index.html';
 }
 </script>
