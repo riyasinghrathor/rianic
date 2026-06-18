@@ -339,3 +339,12 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
   }, { rootMargin: '100px' });
   iframes.forEach(f => obs.observe(f));
 })();
+const navbar = document.getElementById("navbar");
+
+window.addEventListener("scroll", () => {
+    if(window.scrollY > 50){
+        navbar.classList.add("scrolled");
+    } else {
+        navbar.classList.remove("scrolled");
+    }
+});
